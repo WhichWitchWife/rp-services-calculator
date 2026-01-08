@@ -1,8 +1,34 @@
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("../fonts/OpenDyslexic-Regular.otf") format("opentype");
+}
+
 #app {
   color: #2c3e50;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "OpenDyslexic", "Times New Roman", serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  margin-top: 60px;
+  margin-top: 2rem;
   text-align: center;
+}
+
+.header {
+  color: #2c3e50;
+  font-family: "OpenDyslexic", "Times New Roman", serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.input-form {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
 }
