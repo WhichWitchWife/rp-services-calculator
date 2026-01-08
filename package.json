@@ -1,12 +1,12 @@
 {
-  "name": "vite-vanilla-ts-lib-starter",
+  "name": "rp-services-calculator",
   "private": true,
   "version": "0.0.6",
-  "module": "./dist/vite-vanilla-ts-lib-starter.js",
+  "module": "./dist/rp-services-calculator",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/vite-vanilla-ts-lib-starter.js"
+      "import": "./dist/rp-services-calculator.js"
     },
     "./dist/": {
       "import": "./dist/"
