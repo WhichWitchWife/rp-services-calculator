@@ -3,6 +3,10 @@
   src: url("../fonts/OpenDyslexic-Regular.otf") format("opentype");
 }
 
+:root {
+  --pop-up-z-index: 10;
+}
+
 #app {
   color: #2c3e50;
   font-family: "OpenDyslexic", "Times New Roman", serif;
@@ -40,6 +44,47 @@
   .input-grid {
     width: 20rem;
   }
+}
+
+.pop-up {
+  border: oklch(0.2706 0 184) 0.1rem solid;
+  border-radius: 0.5rem;
+  height: 33.33vh;
+  left: 33.33%;
+  position: absolute;
+  top: 33.33%;
+  width: 33.33vw;
+  z-index: var(--pop-up-z-index);
+}
+
+.pop-up-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+
+  h2 {
+    align-content: flex-end;
+    height: 2rem;
+    margin: 0;
+  }
+
+  button {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.settings {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.close {
+  margin: 2rem;
 }
 
 .font-selector {
