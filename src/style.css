@@ -13,17 +13,41 @@
 
 .header {
   color: #2c3e50;
-  font-family: "OpenDyslexic", "Times New Roman", serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  margin-bottom: 0.25rem;
 }
 
-.input-form {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 2rem;
+.open-dyslexia {
+  font-family: OpenDyslexic, sans-serif;
+
+  .input-grid {
+    width: 30rem;
+  }
+}
+
+.times-new-roman {
+  font-family: "Times New Roman", serif;
+
+  .input-grid {
+    width: 20rem;
+  }
+}
+
+.aevnir {
+  font-family: Aevnir, Helvetica, sans-serif;
+
+  .input-grid {
+    width: 20rem;
+  }
+}
+
+.font-selector {
+  font-size: 0.7rem;
+
+  label {
+    margin-right: 0.25rem;
+  }
 }
 
 .input-grid {
@@ -31,4 +55,5 @@
   gap: 0.5rem;
   grid-template-columns: 1fr 1fr;
   justify-items: start;
+  margin-top: 2rem;
 }
