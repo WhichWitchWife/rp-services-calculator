@@ -8,7 +8,6 @@
   font-family: "OpenDyslexic", "Times New Roman", serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  margin-top: 2rem;
   text-align: center;
 }
 
@@ -24,6 +23,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 2rem;
 }
 
 .input-grid {

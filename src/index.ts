@@ -1,3 +1,4 @@
-import "./style.css";
+import { createApp } from "vue";
+import App from "./App.vue";
 
-export { sum } from "./sum";
+createApp(App).mount("#app");

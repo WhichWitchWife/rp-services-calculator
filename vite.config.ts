@@ -1,6 +1,8 @@
 /// <reference types="vitest" />
 import path from "path";
 import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import vueJsxPlugin from "@vitejs/plugin-vue-jsx";
 import packageJson from "./package.json";
 
 const getPackageName = () => {
@@ -33,6 +35,7 @@ export default defineConfig({
       fileName: format => fileName[format],
     },
   },
+  plugins: [vue(), vueJsxPlugin()],
   test: {
     watch: false,
   },
