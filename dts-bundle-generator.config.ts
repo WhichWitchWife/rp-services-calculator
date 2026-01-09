@@ -1,4 +1,4 @@
-export const config = {
+const config = {
   entries: [
     {
       filePath: "./src/index.ts",
@@ -7,3 +7,5 @@ export const config = {
     },
   ],
 };
+
+export default config;
