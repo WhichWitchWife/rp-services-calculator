@@ -1,0 +1,1 @@
+export const HOUSE_CUT_KEY = 'house-cut';

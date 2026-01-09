@@ -1,5 +1,7 @@
 <script setup>
-import Font from "@/Font.vue";
+import Font from "@/setting-inputs/Font.vue";
+import NumericalInput from "@/setting-inputs/NumericalInput.vue";
+import {HOUSE_CUT_KEY} from "@/setting-inputs/settingConstants.js";
 
 defineProps({
   font: String,
@@ -18,6 +20,11 @@ defineEmits([
     </div>
     <div class="settings">
       <Font @input="(e) => $emit('onFontChange', e.target.value)" :modelValue="font"/>
+      <NumericalInput
+          :setting-key="HOUSE_CUT_KEY"
+          setting-name="House Cut (%)"
+          :setting-input-options="{ max: 100 }"
+      />
     </div>
     <button class="close" @click="$emit('closeSettings')">Close</button>
   </div>

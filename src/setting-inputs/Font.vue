@@ -3,7 +3,7 @@ const font = defineModel();
 </script>
 
 <template>
-  <div class="font-selector">
+  <div class="settings-input">
     <label for="font-selector">Font choice</label>
     <select name="font-selector" v-model="font">
       <option value="open-dyslexia">Open Dyslexia</option>
