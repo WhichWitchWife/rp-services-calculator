@@ -17,11 +17,9 @@ import "./style.css";
 
 onMounted(() => {
   font.value = localStorage.getItem("font") || "aevnir";
-  numericalSettings.value = {
-    houseCut: getHouseCut(),
-    numWorkers: getNumberWorkersPresent(),
-    bigTip: getBigTipThreshold(),
-  };
+  houseCut.value = getHouseCut();
+  numWorkers.value = getNumberWorkersPresent();
+  bigTip.value = getBigTipThreshold();
   tipHistory.value = JSON.parse(localStorage.getItem(TIP_HISTORY)) || [];
   startingGil.value = Number(localStorage.getItem("startingGil")) || 0;
   endingGil.value = Number(localStorage.getItem("endingGil")) || 0;
@@ -33,7 +31,20 @@ const onCloseSettings = () => {
 };
 
 const font = ref("open-dyslexia");
-const numericalSettings = ref({ houseCut: 0, numWorkers: 1, bigTip: 1 });
+const houseCut = ref(0);
+const numWorkers = ref(1);
+const bigTip = ref(1);
+
+const getSettingChangeFn = (settingsRef) => {
+  return (val) => {
+    console.log('settingCHangefn val', val);
+    settingsRef.value = val;
+  }
+}
+
+const houseCutChange = getSettingChangeFn(houseCut);
+const numWorkersChange = getSettingChangeFn(numWorkers);
+const bigTipChange = getSettingChangeFn(bigTip);
 
 const tipHistory = ref([]);
 
@@ -94,7 +105,12 @@ const clearValues = () => {
       @on-font-change="onFontChange"
       :font="font"
       @close-settings="onCloseSettings"
-      :numerical-settings="numericalSettings"
+      :house-cut="houseCut"
+      :num-workers="numWorkers"
+      :big-tip="bigTip"
+      @onHouseCutChange="houseCutChange"
+      @onNumWorkersChange="numWorkersChange"
+      @onBigTipChange="bigTipChange"
     />
     <div class="input-grid">
       <label for="starting_amount">Starting Gil</label>
@@ -125,7 +141,9 @@ const clearValues = () => {
       :starting-gil="startingGil"
       :ending-gil="endingGil"
       :tip-history="tipHistory"
-      :settings="numericalSettings"
+      :house-cut="houseCut"
+      :num-workers="numWorkers"
+      :big-tip-threshold="bigTip"
     />
   </div>
 </template>

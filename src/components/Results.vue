@@ -6,7 +6,9 @@ const props = defineProps({
   startingGil: Number,
   endingGil: Number,
   tipHistory: Array,
-  settings: Object,
+  houseCut: Number,
+  numWorkers: Number,
+  bigTipThreshold: Number,
 });
 
 const results = () =>
@@ -14,9 +16,9 @@ const results = () =>
     startingGil: props.startingGil,
     endingGil: props.endingGil,
     tipHistory: props.tipHistory,
-    houseCut: props.settings.houseCut,
-    numWorkers: props.settings.numWorkers,
-    bigTipThreshold: props.settings.bigTip,
+    houseCut: props.houseCut,
+    numWorkers: props.numWorkers,
+    bigTipThreshold: props.bigTipThreshold,
   });
 </script>
 
