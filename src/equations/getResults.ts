@@ -1,4 +1,16 @@
-export function getResults(params: {
+interface Tip {
+  amount: number;
+  timestamp: string;
+}
+
+export function getResults({
+  startingGil,
+  endingGil,
+  houseCut,
+  numWorkers,
+  bigTipThreshold,
+  tipHistory,
+}: {
   startingGil: number;
   endingGil: number;
   houseCut: number;
@@ -8,12 +20,12 @@ export function getResults(params: {
 }) {
   const rawIncome = endingGil - startingGil;
   const smallTips = tipHistory.reduce(
-    (sum: number, tip: object) =>
+    (sum: number, tip: Tip) =>
       sum + (tip.amount < bigTipThreshold ? tip.amount : 0),
     0
   );
   const bigTips = tipHistory.reduce(
-    (sum: number, tip: object) =>
+    (sum: number, tip: Tip) =>
       sum + (tip.amount >= bigTipThreshold ? tip.amount : 0),
     0
   );
