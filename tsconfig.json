@@ -20,6 +20,7 @@
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["vite/client", "node"],
+    "isolatedModules": true,
     "jsx": "preserve",
     "jsxImportSource": "vue"
   },
