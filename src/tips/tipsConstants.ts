@@ -1,6 +1,6 @@
 export const TIP_HISTORY = "tipHistory";
 export function getTipHistory() {
-  return JSON.parse(localStorage.getItem(TIP_HISTORY)) || [];
+  return JSON.parse(localStorage.getItem(TIP_HISTORY) || "") || [];
 }
 
 export function dangerousSetTipHistory(newTipHistory) {
