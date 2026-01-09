@@ -37,9 +37,21 @@ const endingGil = ref(0);
     />
     <div class="input-grid">
       <label for="starting_amount">Starting Gil</label>
-      <input id="starting_amount" type="number" min="1" step="1" v-model="startingGil"/>
+      <input
+        id="starting_amount"
+        type="number"
+        min="1"
+        step="1"
+        v-model="startingGil"
+      />
       <label for="ending_amount">Ending Gil</label>
-      <input id="ending_amount" type="number" min="1" step="1" v-model="endingGil"/>
+      <input
+        id="ending_amount"
+        type="number"
+        min="1"
+        step="1"
+        v-model="endingGil"
+      />
     </div>
     <Tips />
     <Results :starting-gil="startingGil" :ending-gil="endingGil" />
