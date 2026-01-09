@@ -5,12 +5,14 @@ import {
 } from "@/setting-inputs/settingConstants";
 import { getTipHistory } from "@/tips/tipsConstants";
 
-export function getResults(startingGil, endingGil) {
-  const houseCut = getHouseCut();
-  const numWorkers = getNumberWorkersPresent();
-  const bigTipThreshold = getBigTipThreshold();
-  const tipHistory = getTipHistory();
-
+export function getResults({
+  startingGil,
+  endingGil,
+  houseCut,
+  numWorkers,
+  bigTipThreshold,
+  tipHistory,
+}) {
   const rawIncome = endingGil - startingGil;
   const smallTips = tipHistory.reduce(
     (sum, tip) => sum + (tip.amount < bigTipThreshold ? tip.amount : 0),

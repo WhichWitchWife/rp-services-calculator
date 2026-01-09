@@ -3,10 +3,21 @@ import { ref, onMounted } from "vue";
 import Settings from "@/Settings.vue";
 import Tips from "@/Tips.vue";
 import Results from "@/Results.vue";
+import {deleteIndexInLocalStorageTips} from "@/tips/tipsConstants.js";
 import "./style.css";
+import {
+  getBigTipThreshold, getHouseCut,
+  getNumberWorkersPresent,
+} from "@/setting-inputs/settingConstants.js";
 
 onMounted(() => {
   font.value = localStorage.getItem("font") || "open-dyslexia";
+  numericalSettings.value = {
+    houseCut: getHouseCut(),
+    numWorkers: getNumberWorkersPresent(),
+    bigTip: getBigTipThreshold(),
+  }
+  tipHistory.value = JSON.parse(localStorage.getItem("tipHistory"));
 });
 const settingsOpen = ref(false);
 
@@ -15,6 +26,25 @@ const onCloseSettings = () => {
 };
 
 const font = ref("open-dyslexia");
+const numericalSettings = ref({ houseCut: 0, numWorkers: 1, bigTip: 1 });
+
+const tipHistory = ref([]);
+
+const onPushedTip = tip => {
+  tipHistory.value = [...tipHistory.value, tip];
+};
+
+const deleteTip = tip => {
+  const history = tipHistory.value;
+  const deletedIndex = history.findIndex(
+      t => t.timestamp === tip.timestamp && t.amount === tip.amount
+  );
+  tipHistory.value = [
+    ...history.slice(0, deletedIndex),
+    ...history.slice(deletedIndex + 1, history.length),
+  ];
+  deleteIndexInLocalStorageTips(deletedIndex);
+};
 
 const onFontChange = newFont => {
   font.value = newFont;
@@ -34,6 +64,7 @@ const endingGil = ref(0);
       @on-font-change="onFontChange"
       :font="font"
       @close-settings="onCloseSettings"
+      :numerical-settings="numericalSettings"
     />
     <div class="input-grid">
       <label for="starting_amount">Starting Gil</label>
@@ -53,7 +84,7 @@ const endingGil = ref(0);
         v-model="endingGil"
       />
     </div>
-    <Tips />
-    <Results :starting-gil="startingGil" :ending-gil="endingGil" />
+    <Tips :tip-history="tipHistory" :on-pushed-tip="onPushedTip" :delete-tip="deleteTip" />
+    <Results :starting-gil="startingGil" :ending-gil="endingGil" :tip-history="tipHistory" :settings="numericalSettings" />
   </div>
 </template>

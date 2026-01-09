@@ -6,6 +6,7 @@ const props = defineProps({
   settingName: String,
   settingInputOptions: Object,
 });
+const emit = defineEmits({ onUnmount: null });
 const settingValue = ref(0);
 
 onMounted(() => {
@@ -14,6 +15,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   localStorage.setItem(props.settingKey, settingValue.value);
+  emit('onUnmount');
 });
 </script>
 
