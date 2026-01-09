@@ -27,7 +27,7 @@ const formats = Object.keys(fileName) as Array<keyof typeof fileName>;
 export default defineConfig({
   base: "/rp-services-calculator/",
   build: {
-    outDir: "./build/dist",
+    outDir: "./dist",
     lib: {
       entry: path.resolve(__dirname, "src/index.js"),
       name: getPackageNameCamelCase(),
