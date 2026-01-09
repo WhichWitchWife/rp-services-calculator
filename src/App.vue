@@ -3,7 +3,11 @@ import { ref, onMounted } from "vue";
 import Settings from "@/Settings.vue";
 import Tips from "@/Tips.vue";
 import Results from "@/Results.vue";
-import {deleteIndexInLocalStorageTips, pushOntoLocalStorageTips, TIP_HISTORY} from "@/tips/tipsConstants.js";
+import {
+  deleteIndexInLocalStorageTips,
+  pushOntoLocalStorageTips,
+  TIP_HISTORY,
+} from "@/tips/tipsConstants.js";
 import {
   getBigTipThreshold,
   getHouseCut,
@@ -19,8 +23,8 @@ onMounted(() => {
     bigTip: getBigTipThreshold(),
   };
   tipHistory.value = JSON.parse(localStorage.getItem(TIP_HISTORY));
-  startingGil.value = Number(localStorage.getItem('startingGil')) || 0;
-  endingGil.value = Number(localStorage.getItem('endingGil')) || 0;
+  startingGil.value = Number(localStorage.getItem("startingGil")) || 0;
+  endingGil.value = Number(localStorage.getItem("endingGil")) || 0;
 });
 const settingsOpen = ref(false);
 
@@ -58,15 +62,15 @@ const onFontChange = newFont => {
 const startingGil = ref(0);
 const endingGil = ref(0);
 
-const startingGilChange = (val) => {
-  localStorage.setItem('startingGil', val);
+const startingGilChange = val => {
+  localStorage.setItem("startingGil", val);
   startingGil.value = Number(val);
-}
+};
 
-const endingGilChange = (val) => {
-  localStorage.setItem('endingGil', val);
+const endingGilChange = val => {
+  localStorage.setItem("endingGil", val);
   endingGil.value = Number(val);
-}
+};
 
 const clearValues = () => {
   localStorage.setItem(TIP_HISTORY, "[]");
@@ -75,8 +79,7 @@ const clearValues = () => {
   tipHistory.value = [];
   startingGil.value = 0;
   endingGil.value = 0;
-}
-
+};
 </script>
 
 <template>
@@ -101,7 +104,7 @@ const clearValues = () => {
         min="1"
         step="1"
         :value="startingGil"
-        @input="(e) => startingGilChange(e.target.value)"
+        @input="e => startingGilChange(e.target.value)"
       />
       <label for="ending_amount">Ending Gil</label>
       <input
@@ -110,7 +113,7 @@ const clearValues = () => {
         min="1"
         step="1"
         :value="endingGil"
-        @input="(e) => endingGilChange(e.target.value)"
+        @input="e => endingGilChange(e.target.value)"
       />
     </div>
     <Tips
