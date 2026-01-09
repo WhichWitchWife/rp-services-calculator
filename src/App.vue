@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import Settings from "@/Settings.vue";
+import Tips from "@/Tips.vue";
 import "./style.css";
 
 onMounted(() => {
@@ -37,5 +38,6 @@ const onFontChange = (newFont) => {
       <label for="ending_amount">Ending Gil</label>
       <input id="ending_amount" type="number" min="1" step="1" />
     </div>
+    <Tips />
   </div>
 </template>

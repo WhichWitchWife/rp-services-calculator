@@ -107,3 +107,7 @@
   justify-items: start;
   margin-top: 2rem;
 }
+
+.tip-entry {
+  display: flex;
+}
