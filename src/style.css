@@ -49,11 +49,10 @@
 .pop-up {
   border: oklch(0.2706 0 184) 0.1rem solid;
   border-radius: 0.5rem;
-  height: 33.33vh;
-  left: 33.33%;
+  left: 25%;
   position: absolute;
-  top: 33.33%;
-  width: 33.33vw;
+  top: 25%;
+  width: 50vw;
   z-index: var(--pop-up-z-index);
 }
 
