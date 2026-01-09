@@ -1,10 +1,10 @@
-export function getResults({
-  startingGil,
-  endingGil,
-  houseCut,
-  numWorkers,
-  bigTipThreshold,
-  tipHistory,
+export function getResults(params: {
+  startingGil: number;
+  endingGil: number;
+  houseCut: number;
+  numWorkers: number;
+  bigTipThreshold: number;
+  tipHistory: Tip[];
 }) {
   const rawIncome = endingGil - startingGil;
   const smallTips = tipHistory.reduce(
