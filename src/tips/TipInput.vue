@@ -14,7 +14,6 @@ const onSubmit = () => {
     timestamp: new Date().toLocaleString(),
   };
   emit("pushTip", newTip);
-  pushOntoLocalStorageTips(newTip);
   tipInput.value = 0;
 };
 </script>

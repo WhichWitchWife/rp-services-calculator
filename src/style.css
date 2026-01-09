@@ -25,6 +25,12 @@
   margin-bottom: 0.25rem;
 }
 
+.actions {
+  button {
+    margin-right: 1rem;
+  }
+}
+
 .open-dyslexia {
   font-family: OpenDyslexic, sans-serif;
 
