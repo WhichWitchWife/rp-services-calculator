@@ -24,6 +24,6 @@
     "jsx": "preserve",
     "jsxImportSource": "vue"
   },
-  "include": ["./src/**/*.vue", "./src/**/*.ts"],
+  "include": ["./src/**/*.vue", "./src/**/*.ts", "./src/**/*.d.ts"],
   "exclude": ["**/*.test.ts", "node_modules", "test/**", ".history/**"]
 }
