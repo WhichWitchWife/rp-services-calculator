@@ -3,16 +3,16 @@ export function getTipHistory() {
   return JSON.parse(localStorage.getItem(TIP_HISTORY) || "") || [];
 }
 
-export function dangerousSetTipHistory(newTipHistory: array) {
+export function dangerousSetTipHistory(newTipHistory) {
   localStorage.setItem(TIP_HISTORY, newTipHistory);
 }
-export function pushOntoLocalStorageTips(newTip: object) {
+export function pushOntoLocalStorageTips(newTip) {
   const tipHistory = getTipHistory();
   const newHistory = [...tipHistory, newTip];
   dangerousSetTipHistory(JSON.stringify(newHistory));
 }
 
-export function deleteIndexInLocalStorageTips(deletedIndex: number) {
+export function deleteIndexInLocalStorageTips(deletedIndex) {
   const history = getTipHistory();
   dangerousSetTipHistory(
     JSON.stringify([
