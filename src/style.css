@@ -5,6 +5,7 @@
 
 :root {
   --pop-up-z-index: 10;
+  --dark-gray: oklch(0.2706 0 184);
 }
 
 #app {
@@ -47,7 +48,7 @@
 }
 
 .pop-up {
-  border: oklch(0.2706 0 184) 0.1rem solid;
+  border: var(--dark-gray) 0.1rem solid;
   border-radius: 0.5rem;
   left: 25%;
   position: absolute;
@@ -109,5 +110,27 @@
 }
 
 .tip-entry {
+  align-items: baseline;
   display: flex;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  /*justify-content: space-between;*/
+  /*width: 50vw;*/
+  label {
+    margin-right: 1rem;
+  }
+
+  button {
+    margin-left: 0.5rem;
+  }
+}
+
+.tips-table {
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: var(--dark-gray) 0.08rem solid;
+    padding: 0.3rem;
+  }
 }

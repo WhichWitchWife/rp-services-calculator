@@ -15,7 +15,7 @@ onMounted(() => {
 
 <template>
   <TipInput @push-tip="onPushedTip" />
-  <table>
+  <table class="tips-table">
     <tr>
       <th>Timestamp</th>
       <th>Tip Amount</th>
