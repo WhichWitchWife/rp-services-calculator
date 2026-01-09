@@ -1,5 +1,5 @@
 <script setup>
-import TipInput from "@/tips/TipInput.vue";
+import TipInput from "@/components/tips/TipInput.vue";
 
 defineProps({
   tipHistory: Array,

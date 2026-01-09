@@ -1,0 +1,136 @@
+:root {
+  --pop-up-z-index: 10;
+  --dark-gray: oklch(0.2706 0 184);
+  /*--background-color: oklch(0.2294 0.0419 162);*/
+  /*--font-color: oklch(0.8882 0.0715 64.59);*/
+}
+
+#app {
+  color: #2c3e50;
+  font-family: "Times New Roman", serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+
+.header {
+  color: #2c3e50;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 0.25rem;
+}
+
+.actions {
+  button {
+    margin-right: 1rem;
+  }
+}
+
+.times-new-roman {
+  font-family: "Times New Roman", serif;
+
+  .input-grid {
+    width: 20rem;
+  }
+}
+
+.aevnir {
+  font-family: Aevnir, Helvetica, sans-serif;
+
+  .input-grid {
+    width: 20rem;
+  }
+}
+
+.pop-up {
+  background-color: #fff;
+  border: var(--dark-gray) 0.1rem solid;
+  border-radius: 0.5rem;
+  left: 25%;
+  position: absolute;
+  top: 25%;
+  width: 50vw;
+  z-index: var(--pop-up-z-index);
+}
+
+.pop-up-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+
+  h2 {
+    align-content: flex-end;
+    height: 2rem;
+    margin: 0;
+  }
+
+  button {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.settings {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.close {
+  margin: 2rem;
+}
+
+.settings-input {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2rem;
+  width: 100%;
+
+  label {
+    font-size: 0.8rem;
+    margin-right: 0.25rem;
+  }
+}
+
+.input-grid {
+  align-items: baseline;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+  margin-top: 2rem;
+}
+
+.tip-entry {
+  align-items: baseline;
+  display: flex;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  /*justify-content: space-between;*/
+  /*width: 50vw;*/
+  label {
+    margin-right: 1rem;
+  }
+
+  button {
+    margin-left: 0.5rem;
+  }
+}
+
+.tips-table {
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: var(--dark-gray) 0.08rem solid;
+    padding: 0.3rem;
+  }
+}
+
+.results {
+  margin-top: 3rem;
+}

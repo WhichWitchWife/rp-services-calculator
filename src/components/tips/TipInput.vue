@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { pushOntoLocalStorageTips } from "@/tips/tipsConstants.js";
+import { pushOntoLocalStorageTips } from "@/components/tips/tipsConstants.ts";
 const emit = defineEmits({
   pushTip: ({ amount, timestamp }) => {
     return { timestamp, amount };

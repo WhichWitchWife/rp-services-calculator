@@ -1,11 +1,11 @@
 <script setup>
-import Font from "@/setting-inputs/Font.vue";
-import NumericalInput from "@/setting-inputs/NumericalInput.vue";
+import Font from "@/components/setting-inputs/Font.vue";
+import NumericalInput from "@/components/setting-inputs/NumericalInput.vue";
 import {
   BIG_TIP_THRESHOLD,
   HOUSE_CUT,
   NUMBER_WORKERS_PRESENT,
-} from "@/setting-inputs/settingConstants.ts";
+} from "@/components/setting-inputs/settingConstants.ts";
 
 const props = defineProps({
   font: String,

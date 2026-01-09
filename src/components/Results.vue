@@ -1,6 +1,6 @@
 <script setup>
-import ResultColumn from "@/ResultColumn.vue";
-import { getResults } from "@/equations/getResults.ts";
+import ResultColumn from "@/components/ResultColumn.vue";
+import { getResults } from "@/components/equations/getResults.ts";
 
 const props = defineProps({
   startingGil: Number,

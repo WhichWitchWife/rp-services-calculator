@@ -6,7 +6,6 @@ const font = defineModel();
   <div class="settings-input">
     <label for="font-selector">Font choice</label>
     <select name="font-selector" v-model="font">
-      <option value="open-dyslexia">Open Dyslexia</option>
       <option value="times-new-roman">Times New Roman</option>
       <option value="aevnir">Aevnir</option>
     </select>
