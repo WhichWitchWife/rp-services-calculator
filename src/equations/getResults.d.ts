@@ -4,5 +4,5 @@ declare function getResults(
   houseCut: number,
   numWorkers: number,
   bigTipThreshold: number,
-  tipHistory: object[]
+  tipHistory: Tip[]
 );
