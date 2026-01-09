@@ -35,12 +35,11 @@ const houseCut = ref(0);
 const numWorkers = ref(1);
 const bigTip = ref(1);
 
-const getSettingChangeFn = (settingsRef) => {
-  return (val) => {
-    console.log('settingCHangefn val', val);
+const getSettingChangeFn = settingsRef => {
+  return val => {
     settingsRef.value = val;
-  }
-}
+  };
+};
 
 const houseCutChange = getSettingChangeFn(houseCut);
 const numWorkersChange = getSettingChangeFn(numWorkers);

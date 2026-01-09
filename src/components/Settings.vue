@@ -14,18 +14,15 @@ const props = defineProps({
 const emit = defineEmits({
   onFontChange: () => true,
   closeSettings: () => true,
-  onHouseCutChange: (_val) => true,
-  onNumWorkersChange: (_val) => true,
-  onBigTipChange: (_val) => true,
+  onHouseCutChange: _val => true,
+  onNumWorkersChange: _val => true,
+  onBigTipChange: _val => true,
 });
 
 const getUnmountFunction = key => {
-  console.log('getUnmountFN', key);
   return val => {
-    console.log('unmountfn key and val', key, val);
-    console.log(`emitting on${key}Change`);
     emit(`on${key}Change`, val);
-  }
+  };
 };
 </script>
 
@@ -44,19 +41,19 @@ const getUnmountFunction = key => {
         :setting-key="HOUSE_CUT"
         setting-name="House Cut (%)"
         :setting-input-options="{ max: 100, step: 0.1 }"
-        @onUnmount="(val) => getUnmountFunction('HouseCut')(val)"
+        @onUnmount="val => getUnmountFunction('HouseCut')(val)"
       />
       <NumericalInput
         :setting-key="BIG_TIP_THRESHOLD"
         setting-name="Big Tip Threshold"
         :setting-input-options="{ min: 1 }"
-        @onUnmount="(val) => getUnmountFunction('BigTip')(val)"
+        @onUnmount="val => getUnmountFunction('BigTip')(val)"
       />
       <NumericalInput
         :setting-key="NUMBER_WORKERS_PRESENT"
         setting-name="# of Workers Currently Present"
         :setting-input-options="{ min: 1 }"
-        @onUnmount="(val) => getUnmountFunction('NumWorkers')(val)"
+        @onUnmount="val => getUnmountFunction('NumWorkers')(val)"
       />
     </div>
     <button class="close" @click="$emit('closeSettings')">Close</button>
