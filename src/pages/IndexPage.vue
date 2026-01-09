@@ -45,7 +45,7 @@ const onPushedTip = tip => {
 const deleteTip = tip => {
   const history = tipHistory.value;
   const deletedIndex = history.findIndex(
-      t => t.timestamp === tip.timestamp && t.amount === tip.amount
+    t => t.timestamp === tip.timestamp && t.amount === tip.amount
   );
   tipHistory.value = [
     ...history.slice(0, deletedIndex),
@@ -90,42 +90,42 @@ const clearValues = () => {
       <button @click="clearValues">Clear All Values</button>
     </div>
     <Settings
-        v-if="settingsOpen"
-        @on-font-change="onFontChange"
-        :font="font"
-        @close-settings="onCloseSettings"
-        :numerical-settings="numericalSettings"
+      v-if="settingsOpen"
+      @on-font-change="onFontChange"
+      :font="font"
+      @close-settings="onCloseSettings"
+      :numerical-settings="numericalSettings"
     />
     <div class="input-grid">
       <label for="starting_amount">Starting Gil</label>
       <input
-          id="starting_amount"
-          type="number"
-          min="1"
-          step="1"
-          :value="startingGil"
-          @input="e => startingGilChange(e.target.value)"
+        id="starting_amount"
+        type="number"
+        min="1"
+        step="1"
+        :value="startingGil"
+        @input="e => startingGilChange(e.target.value)"
       />
       <label for="ending_amount">Ending Gil</label>
       <input
-          id="ending_amount"
-          type="number"
-          min="1"
-          step="1"
-          :value="endingGil"
-          @input="e => endingGilChange(e.target.value)"
+        id="ending_amount"
+        type="number"
+        min="1"
+        step="1"
+        :value="endingGil"
+        @input="e => endingGilChange(e.target.value)"
       />
     </div>
     <Tips
-        :tip-history="tipHistory"
-        :on-pushed-tip="onPushedTip"
-        :delete-tip="deleteTip"
+      :tip-history="tipHistory"
+      :on-pushed-tip="onPushedTip"
+      :delete-tip="deleteTip"
     />
     <Results
-        :starting-gil="startingGil"
-        :ending-gil="endingGil"
-        :tip-history="tipHistory"
-        :settings="numericalSettings"
+      :starting-gil="startingGil"
+      :ending-gil="endingGil"
+      :tip-history="tipHistory"
+      :settings="numericalSettings"
     />
   </div>
 </template>
