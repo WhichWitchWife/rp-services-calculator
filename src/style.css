@@ -6,6 +6,8 @@
 :root {
   --pop-up-z-index: 10;
   --dark-gray: oklch(0.2706 0 184);
+  /*--background-color: oklch(0.2294 0.0419 162);*/
+  /*--font-color: oklch(0.8882 0.0715 64.59);*/
 }
 
 #app {
@@ -48,6 +50,7 @@
 }
 
 .pop-up {
+  background-color: #fff;
   border: var(--dark-gray) 0.1rem solid;
   border-radius: 0.5rem;
   left: 25%;
@@ -133,4 +136,8 @@
     border: var(--dark-gray) 0.08rem solid;
     padding: 0.3rem;
   }
+}
+
+.results {
+  margin-top: 3rem;
 }

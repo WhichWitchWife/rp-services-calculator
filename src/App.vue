@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 import Settings from "@/Settings.vue";
 import Tips from "@/Tips.vue";
+import Results from "@/Results.vue";
 import "./style.css";
 
 onMounted(() => {
@@ -19,6 +20,9 @@ const onFontChange = newFont => {
   font.value = newFont;
   localStorage.setItem("font", newFont);
 };
+
+const startingGil = ref(0);
+const endingGil = ref(0);
 </script>
 
 <template>
@@ -33,10 +37,11 @@ const onFontChange = newFont => {
     />
     <div class="input-grid">
       <label for="starting_amount">Starting Gil</label>
-      <input id="starting_amount" type="number" min="1" step="1" />
+      <input id="starting_amount" type="number" min="1" step="1" v-model="startingGil"/>
       <label for="ending_amount">Ending Gil</label>
-      <input id="ending_amount" type="number" min="1" step="1" />
+      <input id="ending_amount" type="number" min="1" step="1" v-model="endingGil"/>
     </div>
     <Tips />
+    <Results :starting-gil="startingGil" :ending-gil="endingGil" />
   </div>
 </template>

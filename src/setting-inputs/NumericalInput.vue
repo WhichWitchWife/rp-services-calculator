@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref, useAttrs } from "vue";
 
-defineProps({
+const props = defineProps({
   settingKey: String,
   settingName: String,
   settingInputOptions: Object,
@@ -9,13 +9,11 @@ defineProps({
 const settingValue = ref(0);
 
 onMounted(() => {
-  const attrs = useAttrs();
-  settingValue.value = Number(localStorage.getItem(attrs.settingKey)) || 0;
+  settingValue.value = Number(localStorage.getItem(props.settingKey)) || 0;
 });
 
 onUnmounted(() => {
-  const attrs = useAttrs();
-  localStorage.setItem(attrs.settingKey, settingValue.value);
+  localStorage.setItem(props.settingKey, settingValue.value);
 });
 </script>
 
