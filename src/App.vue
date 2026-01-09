@@ -5,32 +5,31 @@ import Tips from "@/Tips.vue";
 import "./style.css";
 
 onMounted(() => {
-  font.value = localStorage.getItem('font') || 'open-dyslexia';
+  font.value = localStorage.getItem("font") || "open-dyslexia";
 });
 const settingsOpen = ref(false);
 
 const onCloseSettings = () => {
   settingsOpen.value = false;
-}
+};
 
 const font = ref("open-dyslexia");
 
-const onFontChange = (newFont) => {
+const onFontChange = newFont => {
   font.value = newFont;
-  localStorage.setItem('font', newFont);
-}
-
+  localStorage.setItem("font", newFont);
+};
 </script>
 
 <template>
   <div class="app-wrapper" :class="font">
     <h1 class="header">Role-playing Services Form</h1>
-    <button @click="() => settingsOpen = true">Settings</button>
+    <button @click="() => (settingsOpen = true)">Settings</button>
     <Settings
-        v-if="settingsOpen"
-        @on-font-change="onFontChange"
-        :font=font
-        @close-settings="onCloseSettings"
+      v-if="settingsOpen"
+      @on-font-change="onFontChange"
+      :font="font"
+      @close-settings="onCloseSettings"
     />
     <div class="input-grid">
       <label for="starting_amount">Starting Gil</label>
