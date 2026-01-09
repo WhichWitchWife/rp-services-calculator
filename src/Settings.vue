@@ -13,10 +13,13 @@ const props = defineProps({
 });
 defineEmits(["onFontChange", "closeSettings"]);
 
-const getUnmountFunction = (key) => {
-  return (val) => props.numericalSettings.value = { ...props.numericalSettings.value, [key]: val }
-}
-
+const getUnmountFunction = key => {
+  return val =>
+    (props.numericalSettings.value = {
+      ...props.numericalSettings.value,
+      [key]: val,
+    });
+};
 </script>
 
 <template>

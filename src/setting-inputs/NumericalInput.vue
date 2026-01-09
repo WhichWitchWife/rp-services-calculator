@@ -15,7 +15,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   localStorage.setItem(props.settingKey, settingValue.value);
-  emit('onUnmount');
+  emit("onUnmount");
 });
 </script>
 

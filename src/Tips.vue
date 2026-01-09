@@ -5,7 +5,7 @@ defineProps({
   tipHistory: Array,
   onPushedTip: Function,
   deleteTip: Function,
-})
+});
 </script>
 
 <template>

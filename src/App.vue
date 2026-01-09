@@ -3,10 +3,11 @@ import { ref, onMounted } from "vue";
 import Settings from "@/Settings.vue";
 import Tips from "@/Tips.vue";
 import Results from "@/Results.vue";
-import {deleteIndexInLocalStorageTips} from "@/tips/tipsConstants.js";
+import { deleteIndexInLocalStorageTips } from "@/tips/tipsConstants.js";
 import "./style.css";
 import {
-  getBigTipThreshold, getHouseCut,
+  getBigTipThreshold,
+  getHouseCut,
   getNumberWorkersPresent,
 } from "@/setting-inputs/settingConstants.js";
 
@@ -16,7 +17,7 @@ onMounted(() => {
     houseCut: getHouseCut(),
     numWorkers: getNumberWorkersPresent(),
     bigTip: getBigTipThreshold(),
-  }
+  };
   tipHistory.value = JSON.parse(localStorage.getItem("tipHistory"));
 });
 const settingsOpen = ref(false);
@@ -37,7 +38,7 @@ const onPushedTip = tip => {
 const deleteTip = tip => {
   const history = tipHistory.value;
   const deletedIndex = history.findIndex(
-      t => t.timestamp === tip.timestamp && t.amount === tip.amount
+    t => t.timestamp === tip.timestamp && t.amount === tip.amount
   );
   tipHistory.value = [
     ...history.slice(0, deletedIndex),
@@ -84,7 +85,16 @@ const endingGil = ref(0);
         v-model="endingGil"
       />
     </div>
-    <Tips :tip-history="tipHistory" :on-pushed-tip="onPushedTip" :delete-tip="deleteTip" />
-    <Results :starting-gil="startingGil" :ending-gil="endingGil" :tip-history="tipHistory" :settings="numericalSettings" />
+    <Tips
+      :tip-history="tipHistory"
+      :on-pushed-tip="onPushedTip"
+      :delete-tip="deleteTip"
+    />
+    <Results
+      :starting-gil="startingGil"
+      :ending-gil="endingGil"
+      :tip-history="tipHistory"
+      :settings="numericalSettings"
+    />
   </div>
 </template>

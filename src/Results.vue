@@ -9,14 +9,15 @@ const props = defineProps({
   settings: Object,
 });
 
-const results = () => getResults({
-  startingGil: props.startingGil,
-  endingGil: props.endingGil,
-  tipHistory: props.tipHistory,
-  houseCut: props.settings.houseCut,
-  numWorkers: props.settings.numWorkers,
-  bigTipThreshold: props.settings.bigTip,
-});
+const results = () =>
+  getResults({
+    startingGil: props.startingGil,
+    endingGil: props.endingGil,
+    tipHistory: props.tipHistory,
+    houseCut: props.settings.houseCut,
+    numWorkers: props.settings.numWorkers,
+    bigTipThreshold: props.settings.bigTip,
+  });
 </script>
 
 <template>
